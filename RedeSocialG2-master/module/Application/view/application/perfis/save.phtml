@@ -1,0 +1,103 @@
+<div class="panel panel-default">
+    <div class="panel-body" style="width: 500px;">
+        <h1 class="panel-default">SALVAR DADOS DO PERFIL</h1>  
+        <?php
+        echo $this->form()->openTag($form);
+        echo $this->form()->openTag($formUsuario);
+        ?>
+
+        <div>
+            <?php echo $form->get('statusRelacionamento')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($form->get('statusRelacionamento')); ?>
+        </div> 
+        <div>
+            <?php echo $form->get('profissao')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($form->get('profissao')); ?>
+        </div> 
+        <div>
+            <?php echo $form->get('formacao')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($form->get('formacao')); ?>
+        </div> 
+        <div>
+            <?php echo $form->get('ondeTrabalha')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($form->get('ondeTrabalha')); ?>
+        </div> 
+        <?php
+        //echo $this->form()->closeTag();
+        ?>
+
+        <h1>SALVAR DADOS DO USUARIO</h1>  
+        <?php
+        //echo $this->form()->openTag($formUsuario);
+        ?>
+        <div>
+            <?php echo $formUsuario->get('nome')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('nome')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('sobrenome')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('sobrenome')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('email')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('email')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('celular')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('celular')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('senha')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('senha')); ?>
+        </div> 
+        <br>
+        <div>
+            <?php echo $formUsuario->get('role')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formSelect($formUsuario->get('role')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('dataNascimento')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('dataNascimento')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('sexo')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('sexo')); ?>
+        </div> 
+        <div>
+            <?php echo $formUsuario->get('autenticado')->getLabel(); ?>
+        </div>
+        <div class="input-xlarge">
+            <?php echo $this->formInput($formUsuario->get('autenticado')); ?>
+        </div> 
+        <div class="input-group">
+            <?php echo $this->formSubmit($formUsuario->get('submit')); ?>
+        </div> 
+        <?php
+        echo $this->form()->closeTag();
+        ?>
+    </div>
+</div>
