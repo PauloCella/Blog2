@@ -27,14 +27,6 @@ class Usuario extends Entity {
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Perfil", cascade={"persist"})
-     * @ORM\JoinColumn(name="id_perfil", referencedColumnName="id")
-     *
-     * @var \Admin\Entity\Perfil
-     */
-    protected $perfil;
-
-    /**
      * @ORM\Column (type="string")
      *
      * @var string
@@ -210,16 +202,16 @@ class Usuario extends Entity {
     }
 
     /**
-     * @param $autenticacao
+     * @param $autenticado
      */
-    public function setAutenticacao($autenticacao) {
-        $this->autenticado = $autenticacao;
+    public function setAutenticado($autenticado) {
+        $this->autenticado = $autenticado;
     }
 
     /**
      * @return boolean
      */
-    public function getAutenticacao() {
+    public function getAutenticado() {
         return $this->autenticado;
     }
 
@@ -342,7 +334,7 @@ class Usuario extends Entity {
         $input_filter->add(
                 $factory->createInput(array(
                     'name' => 'celular',
-                    'required' => false,
+                    'required' => true,
                     'filters' => array(
                         array('name' => 'StripTags'),
                         array('name' => 'StringTrim'),
@@ -419,15 +411,16 @@ class Usuario extends Entity {
                     ),
                 ))
         );
-        
+
         $input_filter->add(
                 $factory->createInput(array(
                     'name' => 'autenticado',
-                    'required' => true,
+                    'required' => false,
                 ))
         );
-        
-        
+
+
+
         $input_filter->add(
                 $factory->createInput(array(
                     'name' => 'role',
@@ -449,7 +442,7 @@ class Usuario extends Entity {
                 ))
         );
 
-        
+
 
         $this->input_filter = $input_filter;
         return $this->input_filter;
